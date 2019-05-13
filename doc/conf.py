@@ -7,7 +7,10 @@ copyright = '2018, ' + author
 # needs_sphinx = '1.0'
 
 extensions = [
+    'sphinx.ext.todo',
 ]
+
+todo_include_todos = True
 
 master_doc = 'index'
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
