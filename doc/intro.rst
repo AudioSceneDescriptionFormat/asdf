@@ -61,3 +61,33 @@ Please note a few changes to the "minimal" version above:
   Without this ``<par>`` element, the ``<transform>`` would only be active
   *after* the ``<clip>`` is finished (because the ``<body>`` element implicitly
   behaves like a ``<seq>`` element).
+
+But that's still not the full level of detail!
+
+There is even more ASDF syntax that can be added, see
+:download:`scenes/minimal-expanded-even-more.asd`:
+
+.. literalinclude:: scenes/minimal-expanded-even-more.asd
+
+* In addition to ``<source>``, there are more elements that can have an ``id``
+  attribute, namely ``<clip>``, ``<channel>`` and ``<transform>``.
+  You only need to specify an ``id`` attribute
+  if you want to refer to it
+  from a ``<transform>`` element
+  (with the ``apply-to`` attribute).
+
+* ``<seq>``, ``<par>`` and ``<transform>`` elements can have
+  ``begin``, ``dur`` and/or ``end`` attributes.
+  In this example, the duration is provided by the audio file and it doesn't
+  have to be specified explicitly.
+
+  .. todo:: ``skip`` attribute
+
+  .. todo:: For more details, see ...
+
+* ``<transform>`` elements can have nested elements to provide dynamically
+  changing properties, e.g. movement along a curve in space.
+
+  .. todo:: ``rot``, ``vol``, ...
+
+  .. todo:: For more details, see ...
