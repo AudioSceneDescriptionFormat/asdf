@@ -13,3 +13,4 @@ https://github.com/AudioSceneDescriptionFormat/asdf
    seq-par
    source-vs-clip-vs-channel
    implementation
+   broken-scenes
