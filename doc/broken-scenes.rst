@@ -53,3 +53,36 @@ this is just one example::
    <asdf version="0.1">
    </asdf>
    ^
+
+
+:download:`scenes/broken/no-body-after-head.asd`:
+
+.. literalinclude:: scenes/broken/no-body-after-head.asd
+
+::
+
+   Error loading "scenes/broken/no-body-after-head.asd": <body> required after <head>
+   ---
+   <asdf version="0.4">
+   <head>
+   </head>
+   <seq>
+    ^
+
+
+:download:`scenes/broken/content-after-body.asd`:
+
+.. literalinclude:: scenes/broken/content-after-body.asd
+
+::
+
+   Error loading "scenes/broken/content-after-body.asd": No content allowed after </body>
+   ---
+   <asdf version="0.4">
+   <body>
+   </body>
+   <seq>
+    ^
+
+
+.. todo:: ``skip`` greater than file length
