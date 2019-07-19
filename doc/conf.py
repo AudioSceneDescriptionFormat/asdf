@@ -8,15 +8,46 @@ copyright = '2018, ' + author
 
 extensions = [
     'sphinx.ext.todo',
+    'nbsphinx',
 ]
 
 todo_include_todos = True
 
 master_doc = 'index'
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints']
 highlight_language = 'xml'
 pygments_style = None
 
+nbsphinx_prolog = r"""
+{% set docname = env.doc2path(env.docname, base='doc') %}
+
+.. only:: html
+
+    .. role:: raw-html(raw)
+        :format: html
+
+    .. nbinfo::
+
+        This page was generated from `{{ docname }}`__.
+        Interactive online version: :raw-html:`<a href="https://mybinder.org/v2/gh/AudioSceneDescriptionFormat/asdf/{{ env.config.release }}?filepath={{ docname }}"><img alt="Binder badge" src="https://mybinder.org/badge_logo.svg" style="vertical-align:text-bottom"></a>`
+
+    __ https://github.com/AudioSceneDescriptionFormat/asdf/blob/
+        {{ env.config.release }}/{{ docname }}
+
+.. raw:: latex
+
+    \nbsphinxstartnotebook{\scriptsize\noindent\strut
+    \textcolor{gray}{The following section was generated from
+    \sphinxcode{\sphinxupquote{\strut {{ docname | escape_latex }}}} \dotfill}}
+"""
+
+nbsphinx_epilog = r"""
+.. raw:: latex
+
+    \nbsphinxstopnotebook{\scriptsize\noindent\strut
+    \textcolor{gray}{\dotfill\ \sphinxcode{\sphinxupquote{\strut
+    {{ env.doc2path(env.docname, base='doc') | escape_latex }}}} ends here.}}
+"""
 
 # -- Get version information and date from Git ----------------------------
 
@@ -35,13 +66,23 @@ except Exception:
 
 html_theme = 'alabaster'
 # html_theme_options = {}
-
+html_sourcelink_suffix = ''
+html_scaled_image_link = False
 
 # -- Options for LaTeX output ------------------------------------------------
 
 latex_elements = {
     'papersize': 'a4paper',
     'printindex': '',
+    'sphinxsetup': r"""
+        VerbatimColor={HTML}{F5F5F5},
+        VerbatimBorderColor={HTML}{E0E0E0},
+        noteBorderColor={HTML}{E0E0E0},
+        noteborder=1.5pt,
+        warningBorderColor={HTML}{E0E0E0},
+        warningborder=1.5pt,
+        warningBgColor={HTML}{FBFBFB},
+    """,
     'preamble': r"""
 \usepackage[sc,osf]{mathpazo}
 \linespread{1.05}  % see http://www.tug.dk/FontCatalogue/urwpalladio/
@@ -60,6 +101,7 @@ latex_documents = [
 ]
 
 latex_show_urls = 'footnote'
+latex_show_pagerefs = True
 
 # -- Options for Epub output -------------------------------------------------
 
