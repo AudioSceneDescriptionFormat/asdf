@@ -36,23 +36,23 @@ Please note a few changes to the "minimal" version above:
 * The :doc:`head-body` elements are optional.
   The :doc:`asdf` element (including version number) is always required.
 
-* In the ``<head>`` section there is a separate :doc:`source` element,
+* In the |head| section there is a separate :doc:`source` element,
   see also :doc:`source-vs-clip-vs-channel`.
 
-* Even though this is not necessary for a mono ``<clip>``,
-  a ``<channel>`` element has been provided explicitly.
-  It has been associated with the ``<source>`` that was defined in ``<head>``.
+* Even though this is not necessary for a mono |clip|,
+  a |channel| element has been provided explicitly.
+  It has been associated with the |source| that was defined in |head|.
   See also :doc:`source-vs-clip-vs-channel`.
 
 * Even though simple transformations (like specifying a fixed position)
   can be directly added to :doc:`clip-channel` elements,
   a separate :doc:`transform` element has been used here.
-  The target of the ``<transform>`` is the ``<clip>``
-  (it could also be the ``<channel>`` or the ``<source>``,
+  The target of the |transform| is the |clip|
+  (it could also be the |channel| or the |source|,
   which in this simple example wouldn't make any difference).
 
-* Because the ``<clip>`` and the ``<transform>`` happen at the same time,
-  they are wrapped in a ``<par>`` element, see :doc:`seq-par`.
-  Without this ``<par>`` element, the ``<transform>`` would only be active
-  *after* the ``<clip>`` is finished (because the ``<body>`` element implicitly
-  behaves like a ``<seq>`` element).
+* Because the |clip| and the |transform| happen at the same time,
+  they are wrapped in a |par| element, see :doc:`seq-par`.
+  Without this |par| element, the |transform| would only be active
+  *after* the |clip| is finished (because the |body| element implicitly
+  behaves like a |seq| element).

@@ -18,6 +18,20 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints']
 highlight_language = 'xml'
 pygments_style = None
 
+rst_prolog = """
+.. |asdf| replace:: ``<asdf>``
+.. |head| replace:: ``<head>``
+.. |meta| replace:: ``<meta>``
+.. |source| replace:: ``<source>``
+.. |body| replace:: ``<body>``
+.. |seq| replace:: ``<seq>``
+.. |par| replace:: ``<par>``
+.. |clip| replace:: ``<clip>``
+.. |channel| replace:: ``<channel>``
+.. |transform| replace:: ``<transform>``
+.. |o| replace:: ``<o>``
+"""
+
 nbsphinx_prolog = r"""
 {% set docname = env.doc2path(env.docname, base='doc') %}
 
