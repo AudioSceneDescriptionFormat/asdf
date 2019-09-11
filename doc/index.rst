@@ -10,6 +10,6 @@ https://github.com/AudioSceneDescriptionFormat/asdf
 
    intro
    position-orientation
-   seq-par
    source-vs-clip-vs-channel
+   elements
    implementation
