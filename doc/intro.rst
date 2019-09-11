@@ -34,10 +34,7 @@ Please note a few changes to the "minimal" version above:
   has been added, which is optional in XML 1.0 (but not in XML 1.1)
 
 * The :doc:`head-body` elements are optional.
-  If there is no ``<body>`` element, all sub-elements of ``<asdf>``
-  (except an optional ``<head>`` element)
-  are treated as if they were contained in a ``<body>`` element.
-  The ``<asdf>`` element (including version number) is always required.
+  The :doc:`asdf` element (including version number) is always required.
 
 * In the ``<head>`` section there is a separate :doc:`source` element,
   see also :doc:`source-vs-clip-vs-channel`.
@@ -48,10 +45,10 @@ Please note a few changes to the "minimal" version above:
   See also :doc:`source-vs-clip-vs-channel`.
 
 * Even though simple transformations (like specifying a fixed position)
-  can be added to :doc:`clip-channel` elements,
+  can be directly added to :doc:`clip-channel` elements,
   a separate :doc:`transform` element has been used here.
-  The target of the ``<transform>`` is the ``<clip>`` element
-  (it could also be the ``<channel>`` or the ``<source>`` element,
+  The target of the ``<transform>`` is the ``<clip>``
+  (it could also be the ``<channel>`` or the ``<source>``,
   which in this simple example wouldn't make any difference).
 
 * Because the ``<clip>`` and the ``<transform>`` happen at the same time,

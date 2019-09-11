@@ -13,7 +13,7 @@ For a simple example, see :download:`scenes/seq-par.asd`:
 
 .. literalinclude:: scenes/seq-par.asd
 
-The main ``<asdf>`` element implicitly behaves like a ``<seq>`` element,
+The main :doc:`asdf` element implicitly behaves like a ``<seq>`` element,
 i.e. all elements are played in sequence,
 like in the example file :download:`scenes/implicit-seq.asd`:
 
