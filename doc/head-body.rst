@@ -6,7 +6,8 @@ Both |head| and |body| are optional.
 If there is a |head| element,
 it must be the first sub-element of :doc:`asdf`.
 
-The |head| element can contain :doc:`source` sub-elements.
+The |head| element can contain :doc:`source` sub-elements
+and an optional :doc:`reference` element.
 
 .. todo:: |meta| elements in |head|
 

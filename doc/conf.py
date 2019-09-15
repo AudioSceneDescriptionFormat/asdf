@@ -23,6 +23,7 @@ rst_prolog = """
 .. |head| replace:: ``<head>``
 .. |meta| replace:: ``<meta>``
 .. |source| replace:: ``<source>``
+.. |reference| replace:: ``<reference>``
 .. |body| replace:: ``<body>``
 .. |seq| replace:: ``<seq>``
 .. |par| replace:: ``<par>``
