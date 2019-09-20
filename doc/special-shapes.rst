@@ -69,3 +69,14 @@ something similar to sine and cosine oscillations can be created.
 This is illustrated in :scene-link:`sine-wave.asd`:
 
 .. literalinclude:: scenes/sine-wave.asd
+
+
+Lissajous Figures
+-----------------
+
+Once we have sinusoidal oscillations (or at least something similar),
+we can make `Lissajous figures`__, as shown in :scene-link:`lissajous.asd`:
+
+.. literalinclude:: scenes/lissajous.asd
+
+__ https://en.wikipedia.org/wiki/Lissajous_curve
