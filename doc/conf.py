@@ -34,7 +34,7 @@ rst_prolog = """
 """
 
 nbsphinx_prolog = r"""
-{% set docname = env.doc2path(env.docname, base='doc') %}
+{% set docname = 'doc/' + env.doc2path(env.docname, base=None) %}
 
 .. only:: html
 
@@ -57,11 +57,13 @@ nbsphinx_prolog = r"""
 """
 
 nbsphinx_epilog = r"""
+{% set docname = 'doc/' + env.doc2path(env.docname, base=None) %}
+
 .. raw:: latex
 
     \nbsphinxstopnotebook{\scriptsize\noindent\strut
     \textcolor{gray}{\dotfill\ \sphinxcode{\sphinxupquote{\strut
-    {{ env.doc2path(env.docname, base='doc') | escape_latex }}}} ends here.}}
+    {{ docname | escape_latex }}}} ends here.}}
 """
 
 # -- Get version information and date from Git ----------------------------
