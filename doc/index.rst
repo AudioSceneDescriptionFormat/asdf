@@ -6,7 +6,7 @@ https://github.com/AudioSceneDescriptionFormat/asdf
 ----
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    intro
    position-orientation
