@@ -81,7 +81,7 @@ except Exception:
 
 # -- Options for HTML output -------------------------------------------------
 
-html_theme = 'alabaster'
+html_theme = 'insipid'
 # html_theme_options = {}
 html_sourcelink_suffix = ''
 html_scaled_image_link = False
