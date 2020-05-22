@@ -85,6 +85,7 @@ html_theme = 'alabaster'
 # html_theme_options = {}
 html_sourcelink_suffix = ''
 html_scaled_image_link = False
+html_add_permalinks = '\N{SECTION SIGN}'
 
 # -- Options for LaTeX output ------------------------------------------------
 
