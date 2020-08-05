@@ -2,7 +2,6 @@
 
 project = 'ASDF'
 author = 'Matthias Geier'
-copyright = '2018, ' + author
 
 # needs_sphinx = '1.0'
 
@@ -14,9 +13,7 @@ extensions = [
 todo_include_todos = True
 
 master_doc = 'index'
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints']
 highlight_language = 'xml'
-pygments_style = None
 
 rst_prolog = """
 .. |asdf| replace:: ``<asdf>``
@@ -82,10 +79,9 @@ except Exception:
 # -- Options for HTML output -------------------------------------------------
 
 html_theme = 'insipid'
-# html_theme_options = {}
-html_sourcelink_suffix = ''
-html_scaled_image_link = False
 html_add_permalinks = '\N{SECTION SIGN}'
+html_copy_source = False
+html_show_copyright = False
 
 # -- Options for LaTeX output ------------------------------------------------
 
