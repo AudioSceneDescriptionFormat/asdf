@@ -2,3 +2,4 @@ insipid-sphinx-theme
 nbsphinx
 ipykernel
 sympy
+sphinx-last-updated-by-git

@@ -8,6 +8,7 @@ author = 'Matthias Geier'
 extensions = [
     'sphinx.ext.todo',
     'nbsphinx',
+    'sphinx_last_updated_by_git',
 ]
 
 todo_include_todos = True
