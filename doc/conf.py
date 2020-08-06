@@ -76,6 +76,7 @@ except Exception:
 # -- Options for HTML output -------------------------------------------------
 
 html_theme = 'insipid'
+html_favicon = 'favicon.svg'
 html_add_permalinks = '\N{SECTION SIGN}'
 html_copy_source = False
 html_show_copyright = False
