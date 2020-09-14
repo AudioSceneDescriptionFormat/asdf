@@ -37,9 +37,14 @@ a single |o| element is able to describe a constant transform.
 
 If we specify two transform nodes,
 we can define a *linear movement* between two points.
-This is shown in :download:`scenes/minimal-movement.asd`:
+This is shown in :download:`scenes/two-pos.asd`:
 
-.. literalinclude:: scenes/minimal-movement.asd
+.. literalinclude:: scenes/two-pos.asd
+
+You can also specify two rotations, which leads to a linear interpolation
+between them.  See :download:`scenes/two-rot.asd`:
+
+.. literalinclude:: scenes/two-rot.asd
 
 In fact, two nodes are not a special case.
 As soon as there is more than one node,
