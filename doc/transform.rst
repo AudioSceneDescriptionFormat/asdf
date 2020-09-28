@@ -73,10 +73,15 @@ By default, sources move with a constant speed along trajectories,
 but if desired, time values can be assigned to any node.
 The speed will be varied such that the source passes those nodes
 at the given times.
-
-:download:`scenes/spline-time.asd`:
+See :download:`scenes/spline-time.asd`:
 
 .. literalinclude:: scenes/spline-time.asd
+
+Time values can also be given in percent,
+where 100% is the total duration of the |transform|.
+See :download:`scenes/spline-time-percent.asd`:
+
+.. literalinclude:: scenes/spline-time-percent.asd
 
 
 ``speed``
