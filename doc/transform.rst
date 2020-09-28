@@ -77,6 +77,14 @@ See :download:`scenes/spline-time.asd`:
 
 .. literalinclude:: scenes/spline-time.asd
 
+If not specified otherwise, time values are interpreted as seconds.
+Hours and minutes can be spelled in ``HH:MM:SS.sss`` format
+(where hours and fractions of seconds are optional)
+or using the ``h`` and ``min`` suffixes.
+For an example, see :download:`scenes/spline-time-hh-mm-ss.asd`:
+
+.. literalinclude:: scenes/spline-time-hh-mm-ss.asd
+
 Time values can also be given in percent,
 where 100% is the total duration of the |transform|.
 See :download:`scenes/spline-time-percent.asd`:
