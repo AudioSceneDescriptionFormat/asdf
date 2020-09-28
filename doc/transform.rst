@@ -26,6 +26,16 @@ This can be the ID or a space-separated list of IDs of any
 as well as other |transform| elements.
 The special ID ``"reference"`` can be used to target the reference.
 
+``pos``
+-------
+
+TODO
+
+``rot``
+-------
+
+TODO
+
 |o|
 ---
 
@@ -55,6 +65,10 @@ as for example in :download:`scenes/minimal-spline.asd`:
 
 .. literalinclude:: scenes/minimal-spline.asd
 
+
+``time``
+^^^^^^^^
+
 By default, sources move with a constant speed along trajectories,
 but if desired, time values can be assigned to any node.
 The speed will be varied such that the source passes those nodes
@@ -63,6 +77,10 @@ at the given times.
 :download:`scenes/spline-time.asd`:
 
 .. literalinclude:: scenes/spline-time.asd
+
+
+``speed``
+^^^^^^^^^
 
 In addition to time values, concrete speed values can also be specified.
 However, not all speed values are allowed.
@@ -73,6 +91,13 @@ The speed is given in meters per second.
 For an example, see :download:`scenes/spline-speed.asd`:
 
 .. literalinclude:: scenes/spline-speed.asd
+
+
+Nested |transform|
+------------------
+
+TODO
+
 
 Empty |transform|
 -----------------
