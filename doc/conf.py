@@ -6,10 +6,15 @@ author = 'Matthias Geier'
 # needs_sphinx = '1.0'
 
 extensions = [
+    'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'nbsphinx',
     'sphinx_last_updated_by_git',
 ]
+
+intersphinx_mapping = {
+    'splines': ('https://splines.readthedocs.io/', None),
+}
 
 todo_include_todos = True
 
