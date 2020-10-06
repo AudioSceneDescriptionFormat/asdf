@@ -10,7 +10,7 @@ If there is no |body| element, all sub-elements of |asdf|
 are treated as if they were contained in a |body| element,
 which in turn behaves like an implicit :doc:`\<seq\> <seq-par>` element,
 see :doc:`head-body`.
-For example, the clips in :download:`scenes/implicit-seq.asd`
+For example, the clips in :scene-link:`implicit-seq.asd`
 are played in sequence:
 
 .. literalinclude:: scenes/implicit-seq.asd

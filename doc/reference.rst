@@ -3,10 +3,10 @@
 
 TODO
 
-:download:`scenes/reference-transform.asd`:
+:scene-link:`reference-transform.asd`:
 
 .. literalinclude:: scenes/reference-transform.asd
 
-:download:`scenes/implicit-reference.asd`:
+:scene-link:`implicit-reference.asd`:
 
 .. literalinclude:: scenes/implicit-reference.asd

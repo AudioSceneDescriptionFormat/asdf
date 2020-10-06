@@ -124,3 +124,22 @@ latex_show_pagerefs = True
 
 epub_title = project
 epub_exclude_files = ['search.html']
+
+# -- Define custom role -------------------------------------------------------
+
+
+def scene_link_role(rolename, rawtext, text, lineno, inliner,
+                    options={}, content=()):
+    from docutils import nodes, utils
+    github_url = 'https://github.com/AudioSceneDescriptionFormat/asdf'
+    blob_url = github_url + '/blob/' + release
+    base_url = blob_url + '/doc/scenes/%s'
+    text = utils.unescape(text)
+    full_url = base_url % text
+    pnode = nodes.reference(internal=False, refuri=full_url)
+    pnode += nodes.literal(text, text, classes=['file'])
+    return [pnode], []
+
+
+def setup(app):
+    app.add_role('scene-link', scene_link_role)

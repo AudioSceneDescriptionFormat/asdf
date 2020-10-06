@@ -9,13 +9,13 @@ To play two or more clips at the same time, you can put them into a |par|
 
 |seq| and |par| elements can be arbitrarily nested.
 
-For a simple example, see :download:`scenes/seq-par.asd`:
+For a simple example, see :scene-link:`seq-par.asd`:
 
 .. literalinclude:: scenes/seq-par.asd
 
 If there is no |body| element,
 the main :doc:`asdf` element implicitly behaves like a |seq| element,
 i.e. all elements are played in sequence,
-like in the example file :download:`scenes/implicit-seq.asd`:
+like in the example file :scene-link:`implicit-seq.asd`:
 
 .. literalinclude:: scenes/implicit-seq.asd
