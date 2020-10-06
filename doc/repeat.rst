@@ -5,9 +5,10 @@ Repetition
 
 .. literalinclude:: scenes/repeat-clip.asd
 
-TODO: :doc:`transform`
+:doc:`transform`, :download:`scenes/repeat-transform.asd`:
+
+.. literalinclude:: scenes/repeat-transform.asd
 
 :doc:`seq-par`, :download:`scenes/repeat-seq-par.asd`:
 
 .. literalinclude:: scenes/repeat-seq-par.asd
-
