@@ -1,0 +1,3 @@
+*.asd linguist-language=XML linguist-detectable
+*.rst linguist-detectable
+
