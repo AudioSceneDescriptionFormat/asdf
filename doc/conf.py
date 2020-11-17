@@ -34,6 +34,7 @@ rst_prolog = """
 .. |channel| replace:: ``<channel>``
 .. |transform| replace:: ``<transform>``
 .. |o| replace:: ``<o>``
+.. |wait| replace:: ``<wait>``
 """
 
 nbsphinx_prolog = r"""

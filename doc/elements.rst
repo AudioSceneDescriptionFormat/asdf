@@ -10,3 +10,4 @@ Elements
    seq-par
    clip-channel
    transform
+   wait
