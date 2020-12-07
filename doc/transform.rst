@@ -36,6 +36,17 @@ TODO
 
 TODO
 
+
+``vol``
+-------
+
+A (linear) volume change can be specified as a non-negative decimal value.
+Using ``vol="0"`` results in silence,
+``vol="0.5"`` corresponds to an attenuation of about 6 decibels,
+``vol="1"`` doesn't change the volume and
+``vol="2"`` corresponds to boost of about 6 decibels.
+
+
 |o|
 ---
 
@@ -64,6 +75,18 @@ but with more than two nodes, curved trajectories can be created,
 as for example in :scene-link:`minimal-spline.asd`:
 
 .. literalinclude:: scenes/minimal-spline.asd
+
+In addition to ``pos`` and ``rot``, the ``vol`` attribute can also be animated,
+see :scene-link:`transform-vol.asd`:
+
+.. literalinclude:: scenes/transform-vol.asd
+
+.. note::
+
+    This should only be used for relatively slow volume changes,
+    because the renderer might only apply them on a block-by-block basis.
+    If you need fast envelopes, those should be applied by modifying
+    the source file in a waveform editor.
 
 
 ``time``
