@@ -23,8 +23,8 @@ For further details, see :doc:`clip-channel`.
 
 The examples above use a few shorthand notations to make frequently used
 scenarios a bit easier to type.
-Expanding all the shortcuts used in the first example above would lead to
-the full ASDF syntax shown in :scene-link:`minimal-expanded.asd`:
+Expanding most of the shortcuts used in the first example above would lead to
+the more complicated ASDF syntax shown in :scene-link:`minimal-expanded.asd`:
 
 .. literalinclude:: scenes/minimal-expanded.asd
 
@@ -39,6 +39,9 @@ Please note a few changes to the "minimal" version above:
 * In the |head| section there is a separate :doc:`source` element,
   see also :doc:`source-vs-clip-vs-channel`.
 
+* The |body| element implicitly behaves like a |seq| element,
+  see :doc:`seq-par`.
+
 * Even though this is not necessary for a mono |clip|,
   a |channel| element has been provided explicitly.
   It has been associated with the |source| that was defined in |head|.
@@ -51,8 +54,22 @@ Please note a few changes to the "minimal" version above:
   (it could also be the |channel| or the |source|,
   which in this simple example wouldn't make any difference).
 
+This still uses the shorthand of specifying the position directly in the
+|channel| element.
+As shown in :scene-link:`minimal-expanded-with-explicit-transform.asd`,
+it can be expanded even further:
+
+.. literalinclude:: scenes/minimal-expanded-with-explicit-transform.asd
+
 * Because the |clip| and the |transform| happen at the same time,
   they are wrapped in a |par| element, see :doc:`seq-par`.
   Without this |par| element, the |transform| would only be active
   *after* the |clip| is finished (because the |body| element implicitly
   behaves like a |seq| element).
+
+* If the clip has only one channel, it doesn't matter whether the |transform|
+  is applied to the |clip| or to the |channel|.
+  In this case it could be even directly applied to the |source|.
+
+* The :doc:`transform` element could be even further expanded
+  to contain the ``pos`` information in a single |o| sub-element.

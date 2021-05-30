@@ -4,10 +4,11 @@
     <source id="src1" />
   </head>
   <body>
-    <seq>
+    <par>
       <clip file="audio/ukewave.ogg">
-        <channel source="src1" pos="1 2 0" />
+        <channel id="channel1" source="src1" />
       </clip>
-    </seq>
+      <transform apply-to="channel1" pos="1 2 0" />
+    </par>
   </body>
 </asdf>
