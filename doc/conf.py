@@ -10,10 +10,12 @@ extensions = [
     'sphinx.ext.todo',
     'nbsphinx',
     'sphinx_last_updated_by_git',
+    'sphinx_codeautolink',
 ]
 
 intersphinx_mapping = {
     'splines': ('https://splines.readthedocs.io/', None),
+    'sympy': ('https://docs.sympy.org/latest/', None),
 }
 
 todo_include_todos = True

@@ -3,3 +3,4 @@ nbsphinx
 ipykernel
 sympy
 sphinx-last-updated-by-git
+sphinx-codeautolink
