@@ -132,7 +132,7 @@ For an example, see :scene-link:`spline-speed.asd`:
 ``tension``/``continuity``/``bias``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ASDF uses :doc:`euclidean/kochanek-bartels`, which means that
+The ASDF uses :doc:`splines:euclidean/kochanek-bartels`, which means that
 ``tension``, ``continuity`` and ``bias`` attributes
 (each value ranging from ``-1.0`` to ``1.0`` with a default of ``0.0``)
 can be used, see e.g. :scene-link:`spline-tcb.asd`:
@@ -140,7 +140,7 @@ can be used, see e.g. :scene-link:`spline-tcb.asd`:
 .. literalinclude:: scenes/spline-tcb.asd
 
 Those attributes can also be used with ``rot`` values, leading to
-:doc:`rotation/kochanek-bartels`.
+:doc:`splines:rotation/kochanek-bartels`.
 
 
 Nested |transform|
