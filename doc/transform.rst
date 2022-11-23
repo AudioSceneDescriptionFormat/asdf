@@ -96,6 +96,7 @@ By default, sources move with a constant speed along trajectories,
 but if desired, time values can be assigned to any node.
 The speed will be varied such that the source passes those nodes
 at the given times.
+The first node always implicitly has ``time="0"``.
 See :scene-link:`spline-time.asd`:
 
 .. literalinclude:: scenes/spline-time.asd
