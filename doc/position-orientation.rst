@@ -9,7 +9,7 @@ which is sometimes called an *ENU* system
 (see https://en.wikipedia.org/wiki/Axes_conventions).
 However, contrary to typical ENU systems,
 the default orientation in the ASDF is towards *north*,
-i.e. towards the positive y-axis!
+i.e. along the positive y-axis!
 
 Imagine a treasure map lying on a table in front of you.
 The north direction typically points towards the top of the map
@@ -26,8 +26,37 @@ Your will look straight ahead by default,
 and this happens to be northwards on the map.
 Therefore, the default orientation in ASDF is towards north,
 which corresponds to the positive y-axis.
-
 To complete the triple of axes, the z-axis points up to the ceiling
 (or towards the zenith, if your table is in open air).
 Positive z-values are above the table, negative z-values are below the table.
 The resulting coordinate system is right-handed, which is convenient.
+
+The coordinate values for positions are given in meters.
+The third coordinate is optional and defaults to zero.
+
+As mentioned above,
+the default orientation (sometimes called *view* direction)
+is along the positive y-axis.
+To fully specify all three degrees of freedom,
+the default *up* direction is set to the positive z-axis
+(which should be an unsurprising choice).
+For specifying arbitrary rotations relative to the default orientation,
+up to three `Tait--Bryan angles`__ can be specified.
+The first angle (*azimuth*) rotates around the z-axis,
+the second angle (*elevation*) around the (previously rotated) x-axis
+and the third angle (*roll*) around the (previously rotated) y-axis.
+
+__ https://en.wikipedia.org/wiki/Euler_angles#Tait–Bryan_angles
+
+All angles are given in degrees.
+The *elevation* and *roll* angles are optional, with a default of zero.
+The sign of the rotation angles follows the `right hand rule`__.
+When implementing an ASDF library,
+it is recommended to convert the angles as soon as possible
+into rotation matrices or quaternions, see :doc:`implementation`.
+
+__ https://en.wikipedia.org/wiki/Right-hand_rule#Rotations
+
+Multiple translations/rotations can be nested,
+which means that all coordinates are local with respect to the parent transform.
+For more details, see the documentation of the :doc:`transform` element.

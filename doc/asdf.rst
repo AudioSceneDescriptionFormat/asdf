@@ -1,7 +1,9 @@
 |asdf|
 ======
 
-.. todo:: version
+An ASDF file must contain a single top-level |asdf| element
+with a required ``version`` attribute.
+Currently, only ``version="0.4"`` is supported.
 
 The |asdf| element can optionally contain :doc:`head-body` sub-elements.
 

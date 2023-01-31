@@ -13,28 +13,47 @@ as well as :doc:`source` and :doc:`reference` elements.
 These attributes can be seen as shorthand notation to avoid using
 |transform| elements for such simple cases.
 Of course, explicit |transform| elements can also be used,
-as shown in :scene-link:`minimal-expanded.asd`:
+as shown in :scene-link:`minimal-expanded-with-explicit-transform.asd`:
 
-.. literalinclude:: scenes/minimal-expanded.asd
+.. literalinclude:: scenes/minimal-expanded-with-explicit-transform.asd
 
 ``apply-to``
 ------------
 
 The required attribute ``apply-to`` defines the target(s) for the transform.
-This can be the ID or a space-separated list of IDs of any
+This is a space-separated list of IDs of any
 :doc:`source`, :doc:`clip-channel` elements,
 as well as other |transform| elements.
-The special ID ``"reference"`` can be used to target the reference.
+The special ID ``"reference"`` can be used to target the :doc:`reference`.
+
 
 ``pos``
 -------
 
-TODO
+This is named after *position*, but technically,
+the term *translation* would be more appropriate.
+The final *position* of a sound source (or the :doc:`reference`)
+can be the result of multiple *translations*
+(and maybe *rotations* as well, see below)
+applied to the default *position* ``(0, 0, 0)``.
+
+The ``pos`` attribute contains a space-separated list
+of two or three coordinate values.
+If only two values are given, the third one is assumed to be zero.
+For coordinate system conventions, see :doc:`position-orientation`.
+
 
 ``rot``
 -------
 
-TODO
+In contrast to ``pos``, this is aptly named after *rotation*.
+The final *orientation* of a sound source (or the :doc:`reference`)
+can be the result of multiple *rotations*,
+applied to the default *orientation* ``(0, 0, 0)``.
+For angle conventions, see :doc:`position-orientation`.
+
+The order of applying translations and rotations matters:
+within a |transform| element, ``rot`` is applied *after* ``pos``.
 
 
 ``vol``

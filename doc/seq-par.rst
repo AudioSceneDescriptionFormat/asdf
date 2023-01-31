@@ -1,11 +1,17 @@
 |seq| and |par|
 ===============
 
-Clips can be played one after another by putting them into a |seq|
+Both audio clips (see :doc:`clip-channel`)
+and :doc:`transform` elements
+are objects that have a certain duration.
+They can be placed in the timeline
+one after another by putting them into a |seq|
 (which means "sequential") element.
+To delay an object or to create a pause between two objects,
+a :doc:`wait` element can be inserted into the sequence.
 
-To play two or more clips at the same time, you can put them into a |par|
-(which means "parallel") element.
+To reproduce two or more clips and/or |transform| elements at the same time,
+you can put them into a |par| (which means "parallel") element.
 
 |seq| and |par| elements can be arbitrarily nested.
 

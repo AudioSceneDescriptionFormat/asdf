@@ -9,7 +9,6 @@ https://github.com/AudioSceneDescriptionFormat/asdf
 
    intro
    position-orientation
-   source-vs-clip-vs-channel
    elements
    repeat
    implementation

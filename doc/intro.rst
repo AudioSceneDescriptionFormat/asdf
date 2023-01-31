@@ -36,16 +36,14 @@ Please note a few changes to the "minimal" version above:
 * The :doc:`head-body` elements are optional.
   The :doc:`asdf` element (including version number) is always required.
 
-* In the |head| section there is a separate :doc:`source` element,
-  see also :doc:`source-vs-clip-vs-channel`.
+* In the |head| section there is a separate :doc:`source` element.
 
 * The |body| element implicitly behaves like a |seq| element,
   see :doc:`seq-par`.
 
 * Even though this is not necessary for a mono |clip|,
   a |channel| element has been provided explicitly.
-  It has been associated with the |source| that was defined in |head|.
-  See also :doc:`source-vs-clip-vs-channel`.
+  It has been associated with the :doc:`source` that was defined in |head|.
 
 * Even though simple transformations (like specifying a fixed position)
   can be directly added to :doc:`clip-channel` elements,
