@@ -17,6 +17,9 @@ as shown in :scene-link:`minimal-expanded-with-explicit-transform.asd`:
 
 .. literalinclude:: scenes/minimal-expanded-with-explicit-transform.asd
 
+|transform| elements can be repeated, see :doc:`repeat`.
+
+
 ``apply-to``
 ------------
 
@@ -42,7 +45,7 @@ can be the result of multiple *translations*
 applied to the default *position* ``(0, 0, 0)``.
 
 The ``pos`` attribute contains a space-separated list
-of two or three coordinate values.
+of two or three coordinate values (in meters).
 If only two values are given, the third one is assumed to be zero.
 For coordinate system conventions, see :doc:`position-orientation`.
 
@@ -50,10 +53,14 @@ For coordinate system conventions, see :doc:`position-orientation`.
 ``rot``
 -------
 
-In contrast to ``pos``, this is aptly named after *rotation*.
+Unlike ``pos``, this is aptly named after *rotation*.
 The final *orientation* of a sound source (or the :doc:`reference`)
 can be the result of multiple *rotations*,
 applied to the default *orientation* ``(0, 0, 0)``.
+
+The ``rot`` attribute contains a space-separated list of up to three angles
+(in degrees) called *azimuth*, *elevation* and *roll*.
+Only *azimuth* is required, the others default to zero degree if not specified.
 For angle conventions, see :doc:`position-orientation`.
 
 The order of applying translations and rotations matters:

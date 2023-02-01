@@ -25,3 +25,5 @@ i.e. all elements are played in sequence,
 like in the example file :scene-link:`implicit-seq.asd`:
 
 .. literalinclude:: scenes/implicit-seq.asd
+
+|seq| and |par| elements can be repeated, see :doc:`repeat`.
