@@ -26,6 +26,10 @@ This is a space-separated list of IDs of any
 as well as other |transform| elements.
 The special ID ``"reference"`` can be used to target the :doc:`reference`.
 
+A |transform| element can apply to multiple objects.
+An object can be the target of multiple transforms,
+as long as at most one of them contains a rotation.
+
 
 ``pos``
 -------
@@ -108,6 +112,8 @@ see :scene-link:`transform-vol.asd`:
     the source file in a waveform editor.
 
 
+.. _transform-time:
+
 ``time``
 ^^^^^^^^
 
@@ -166,10 +172,21 @@ Those attributes can also be used with ``rot`` values, leading to
 Nested |transform|
 ------------------
 
-TODO
+Any |transform| that has an ``id`` attribute
+can be used as the target of another |transform|.
+The transforms can have different begin and end times.
+They only have an effect while they are active.
 
+Multiple |transform| elements can target the same object,
+but at most one of them can specify a rotation.
 
-Empty |transform|
------------------
+An example of nested transforms can be seen in
+:scene-link:`nested-transforms.asd`:
 
-TODO: groups
+.. literalinclude:: scenes/nested-transforms.asd
+
+The |clip| defines a static position,
+which is then dynamically translated in the horizontal plane
+according to the |transform| named ``horizontal-movement``.
+This horizontal movement is then transformed again,
+this time with a dynamic rotation around the *roll* axis.
