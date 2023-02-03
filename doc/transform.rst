@@ -197,3 +197,19 @@ which is then dynamically translated in the horizontal plane
 according to the |transform| named ``horizontal-movement``.
 This horizontal movement is then transformed again,
 this time with a dynamic rotation around the *roll* axis.
+
+
+Creating Groups With |transform|
+--------------------------------
+
+There is no dedicated "group" element,
+but a |transform| with multiple targets in the ``apply-to`` attribute
+is essentially defining a group.
+All transform attributes are optional,
+allowing us to create a group by using a non-transforming |transform|:
+
+.. code::
+
+    <transform id="my-group" apply-to="target1 target2 my-other-target" />
+
+This group can then in turn be the target of further |transform| elements.
