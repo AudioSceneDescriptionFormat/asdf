@@ -26,3 +26,22 @@ If the center of rotation is supposed to be somewhere else,
 it can be moved by applying a new |transform| element
 with the desired ``pos`` attribute
 to the |transform| that does the rotation.
+
+
+Helix
+-----
+
+A helical movement can be created by combining a (repeated)
+circular movement (using one of the methods shown above)
+with a linear movement perpendicular to the plane of the circle.
+This is shown in :scene-link:`helix.asd`:
+
+.. literalinclude:: scenes/helix.asd
+
+In this example,
+the |clip| is offset to the left
+and a rotation spline rotates this offset multiple times around the *roll* axis.
+This circular motion is then translated along the default view direction.
+In this case,
+it doesn't matter if ``forward-motion`` is applied to ``circular-motion``
+or directly to ``ukulele``.
