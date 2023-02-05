@@ -57,3 +57,15 @@ This circular motion is then translated along the default view direction.
 In this case,
 it doesn't matter if ``forward-motion`` is applied to ``circular-motion``
 or directly to ``ukulele``.
+
+
+Sinusoidal Oscillation
+----------------------
+
+Sine waves are not directly supported by the ASDF,
+but they can be approximated to some degree.
+By setting ``speed="0"`` at the desired maxima and minima,
+something similar to sine and cosine oscillations can be created.
+This is illustrated in :scene-link:`sine-wave.asd`:
+
+.. literalinclude:: scenes/sine-wave.asd
