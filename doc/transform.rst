@@ -63,8 +63,23 @@ The ``rot`` attribute contains a space-separated list of up to three angles
 Only *azimuth* is required, the others default to zero degree if not specified.
 For angle conventions, see :doc:`position-orientation`.
 
+The range of angle values is not limited,
+but the represented rotations are cyclically repeating
+and the number of turns is irrelevant.
+This means that the angles -90 and 270 both specify the same rotation.
+When using a sequence of rotations to define a rotation spline
+(see the |o| element below),
+the smallest possible angular difference between neighboring rotations is used.
+For example,
+an angle of 270 degrees followed by an angle of 0 degrees
+will lead to a rotation of 90 degrees.
+An angle of 180 degrees followed by -180 degrees
+will lead to no rotation at all.
+
 The order of applying translations and rotations matters:
-within a |transform| element, ``rot`` is applied *after* ``pos``.
+within a |transform| element, ``pos`` is applied *after* ``rot``.
+This means that the target of a |transform| is first rotated
+around the (local) origin and then translated to its final position.
 
 
 ``vol``
