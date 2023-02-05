@@ -6,6 +6,18 @@ All trajectories are using the same underlying type of spline
 (see :doc:`splines`).
 
 
+Square
+------
+
+Trajectories in the ASDF are smooth curves by default,
+and a little extra effort is required to create movements with sharp corners.
+There are two simple settings to get straight line segments:
+``tension="1"`` or ``continuity="-1"``.
+Both options are shown in :scene-link:`square.asd`:
+
+.. literalinclude:: scenes/square.asd
+
+
 Circle
 ------
 
