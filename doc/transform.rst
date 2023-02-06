@@ -17,8 +17,6 @@ as shown in :scene-link:`minimal-expanded-with-explicit-transform.asd`:
 
 .. literalinclude:: scenes/minimal-expanded-with-explicit-transform.asd
 
-|transform| elements can be repeated, see :doc:`repeat`.
-
 
 ``apply-to``
 ------------
@@ -162,6 +160,12 @@ See :scene-link:`spline-time-percent.asd`:
 
 .. literalinclude:: scenes/spline-time-percent.asd
 
+If the |transform| doesn't have a ``dur`` (see below),
+the last node can have an explicit ``time`` value,
+but a percentage is not allowed.
+If unspecified, ``time="100%"`` is implied, i.e.
+the |transform| always ends with the last transform node.
+
 
 ``speed``
 ^^^^^^^^^
@@ -189,6 +193,31 @@ can be used, see e.g. :scene-link:`spline-tcb.asd`:
 
 Those attributes can also be used with ``rot`` values, leading to
 :doc:`splines:rotation/kochanek-bartels`.
+
+
+``repeat``
+----------
+
+|transform| elements can be repeated, see :doc:`repeat`.
+
+
+``dur``
+-------
+
+If the last transform node has its ``time`` attribute set,
+this will determine the duration of the |transform|.
+
+Alternatively, the duration of a |transform|
+can be specified with the ``dur`` attribute,
+which allows the same syntax as the ``time`` attribute of transform nodes.
+If there are repetitions, the duration is that of a single repetition.
+A percentage can be given, which is relative to the duration of
+(one repetition of) the parent element.
+
+If no duration is given, and the |transform| is part of a |par| container,
+the duration is taken from the |par| container
+(whose duration might be provided by its first sub-element).
+See :doc:`seq-par`.
 
 
 Nested |transform|

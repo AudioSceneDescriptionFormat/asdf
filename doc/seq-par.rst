@@ -26,4 +26,16 @@ like in the example file :scene-link:`implicit-seq.asd`:
 
 .. literalinclude:: scenes/implicit-seq.asd
 
+Within a |par| element,
+the first sub-element determines the duration of the whole |par| element.
+Any following sub-elements must not be longer than the first.
+A useful pattern is to use a |clip| as first sub-element
+(which defines the length of the |par|)
+and one or more |transform| elements afterwards,
+which will by default "inherit" the duration of the |clip|.
+
+
+``repeat``
+----------
+
 |seq| and |par| elements can be repeated, see :doc:`repeat`.

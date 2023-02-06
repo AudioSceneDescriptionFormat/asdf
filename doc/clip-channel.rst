@@ -24,10 +24,23 @@ of |clip| and/or |channel|, a dynamic volume envelope can be applied
 with a |transform| element that's running in parallel to the |clip|
 (see :doc:`seq-par`).
 
+As :scene-link:`selecting-channels.asd` shows,
+not all channels of a |clip| have to be used:
+
+.. literalinclude:: scenes/selecting-channels.asd
+
 Audio clips are always played to their full length.
 Audio files should be trimmed beforehand to the desired length.
 
+
+``repeat``
+----------
+
 |clip| elements can be repeated, see :doc:`repeat`.
+
+
+``id``
+------
 
 Both |clip| and |channel| elements can be the target of a :doc:`transform`,
 as long as they have an ``id`` attribute.
@@ -36,6 +49,10 @@ A single |transform| can apply to multiple |clip| and/or |channel| elements.
 A |clip| can be transformed by multiple |transform| elements over time.
 The |transform| elements can overlap,
 but only one of them can contain a rotation in this case.
+
+
+``source``
+----------
 
 If no ``source`` attribute is given,
 a |source| is created implicitly for each channel.
@@ -52,8 +69,3 @@ as demonstrated in :scene-link:`source-transform.asd`:
 This illustrates that different |channel| elements
 can be assigned to the same |source|.
 However, this only works if the channels don't overlap in time.
-
-As :scene-link:`selecting-channels.asd` shows,
-not all channels of a |clip| have to be used:
-
-.. literalinclude:: scenes/selecting-channels.asd
