@@ -194,7 +194,7 @@ can be used, see e.g. :scene-link:`spline-tcb.asd`:
 
 .. literalinclude:: scenes/spline-tcb.asd
 
-Those attributes can also be used with ``rot`` values, leading to
+Those attributes also apply to ``rot`` trajectories, leading to
 :doc:`splines:rotation/kochanek-bartels`.
 
 

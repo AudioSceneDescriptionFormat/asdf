@@ -11,5 +11,6 @@ https://github.com/AudioSceneDescriptionFormat/asdf
    position-orientation
    elements
    repeat
+   splines
    special-shapes
    implementation
