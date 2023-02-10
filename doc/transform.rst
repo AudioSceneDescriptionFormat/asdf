@@ -155,7 +155,7 @@ For an example, see :scene-link:`spline-time-hh-mm-ss.asd`:
 .. literalinclude:: scenes/spline-time-hh-mm-ss.asd
 
 Time values can also be given in percent,
-where 100% is the total duration of the |transform|.
+where 100% is the total duration of (one repetition of) the |transform|.
 See :scene-link:`spline-time-percent.asd`:
 
 .. literalinclude:: scenes/spline-time-percent.asd
@@ -165,6 +165,9 @@ the last node can have an explicit ``time`` value,
 but a percentage is not allowed.
 If unspecified, ``time="100%"`` is implied, i.e.
 the |transform| always ends with the last transform node.
+
+If the ``time`` value of a node is not specified,
+it is deduced from the surrounding nodes.
 
 
 ``speed``
@@ -193,6 +196,24 @@ can be used, see e.g. :scene-link:`spline-tcb.asd`:
 
 Those attributes can also be used with ``rot`` values, leading to
 :doc:`splines:rotation/kochanek-bartels`.
+
+
+Mixed Transform Attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We have seen that ``pos``, ``rot`` and ``vol`` trajectories can be created.
+However, they can also be combined in a single trajectory.
+
+None of the transform attributes are required,
+but if one of the attributes is used in any transform node,
+it also has to be specified in the first and last node.
+In other words,
+missing values are interpolated but not extrapolated.
+
+The scene :scene-link:`mixed-transform-attributes.asd`
+illustrates this in an example trajectory:
+
+.. literalinclude:: scenes/mixed-transform-attributes.asd
 
 
 ``repeat``
