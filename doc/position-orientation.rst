@@ -51,9 +51,6 @@ __ https://en.wikipedia.org/wiki/Euler_angles#Tait–Bryan_angles
 All angles are given in degrees.
 The *elevation* and *roll* angles are optional, with a default of zero.
 The sign of the rotation angles follows the `right hand rule`__.
-When implementing an ASDF library,
-it is recommended to convert the angles as soon as possible
-into rotation matrices or quaternions, see :doc:`implementation`.
 
 __ https://en.wikipedia.org/wiki/Right-hand_rule#Rotations
 
