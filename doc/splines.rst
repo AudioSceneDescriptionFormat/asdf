@@ -74,7 +74,7 @@ See the section about the :doc:`transform` element for details.
 Rotation Splines
 ----------------
 
-When a scene author provide a sequence of orientations
+When a scene author provides a sequence of orientations
 for sound sources or groups of sound sources,
 the values between the given orientations will also be smoothly interpolated.
 

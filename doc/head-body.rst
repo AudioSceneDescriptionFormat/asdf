@@ -14,7 +14,7 @@ those values are static.
 Additional :doc:`transform` elements can be used in the |body|
 to offset those values dynamically.
 
-The |body| element can directly contain :doc:`seq-par` elements,
+The |body| element can contain :doc:`seq-par` elements,
 as well as :doc:`\<clip\> <clip-channel>` and :doc:`transform` elements.
 If the |body| element contains multiple sub-elements,
 it acts like an implicit :doc:`\<seq\> <seq-par>` element.

@@ -37,7 +37,7 @@ as long as at most one of them contains a rotation.
 
 This is named after *position*, but technically,
 the term *translation* would be more appropriate.
-The final *position* of a sound source (or the :doc:`reference`)
+The final *position* of a sound source -- or the :doc:`reference` --
 can be the result of multiple *translations*
 (and maybe *rotations* as well, see below)
 applied to the default *position* ``(0, 0, 0)``.
@@ -52,7 +52,7 @@ For coordinate system conventions, see :doc:`position-orientation`.
 -------
 
 Unlike ``pos``, this is aptly named after *rotation*.
-The final *orientation* of a sound source (or the :doc:`reference`)
+The final *orientation* of a sound source -- or the :doc:`reference` --
 can be the result of multiple *rotations*,
 applied to the default *orientation* ``(0, 0, 0)``.
 
@@ -105,8 +105,9 @@ This is shown in :scene-link:`two-pos.asd`:
 
 .. literalinclude:: scenes/two-pos.asd
 
-You can also specify two rotations, which leads to a linear interpolation
-between them.  See :scene-link:`two-rot.asd`:
+You can also specify two rotations,
+which leads to a (spherical) linear interpolation between them.
+See :scene-link:`two-rot.asd`:
 
 .. literalinclude:: scenes/two-rot.asd
 
@@ -194,15 +195,15 @@ can be used, see e.g. :scene-link:`spline-tcb.asd`:
 
 .. literalinclude:: scenes/spline-tcb.asd
 
-Those attributes also apply to ``rot`` trajectories, leading to
-:doc:`splines:rotation/kochanek-bartels`.
+Those attributes can also be used for ``rot`` trajectories,
+leading to :doc:`splines:rotation/kochanek-bartels`.
 
 
 Mixed Transform Attributes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We have seen that ``pos``, ``rot`` and ``vol`` trajectories can be created.
-However, they can also be combined in a single trajectory.
+However, they can also be combined into a single trajectory.
 
 None of the transform attributes are required,
 but if one of the attributes is used in any transform node,

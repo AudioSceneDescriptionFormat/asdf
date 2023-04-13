@@ -48,7 +48,8 @@ as long as they have an ``id`` attribute.
 A single |transform| can apply to multiple |clip| and/or |channel| elements.
 A |clip| can be transformed by multiple |transform| elements over time.
 The |transform| elements can overlap,
-but only one of them can contain a rotation in this case.
+but only one of them can contain a rotation in this case
+(because the order of applying those rotations would be ambiguous).
 
 
 ``source``

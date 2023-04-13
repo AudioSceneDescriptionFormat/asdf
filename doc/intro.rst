@@ -7,11 +7,11 @@ Let's start simple, with the file :scene-link:`minimal.asd`:
 
 This plays the contents of the (mono) audio file
 :scene-link:`audio/ukewave.ogg`,
-coming from a spatial position of 2 metres in front and 1 metre to the right.
+coming from a spatial position of 2 meters in front and 1 meter to the right.
 For more details on the used coordinate system, see :doc:`position-orientation`.
 
 If you want to play a file with more than one channel,
-you have to provide positions for each of the channels,
+you can provide positions for each of the channels,
 like shown in :scene-link:`minimal-multichannel.asd`:
 
 .. literalinclude:: scenes/minimal-multichannel.asd
@@ -45,13 +45,6 @@ Please note a few changes to the "minimal" version above:
   a |channel| element has been provided explicitly.
   It has been associated with the :doc:`source` that was defined in |head|.
 
-* Even though simple transformations (like specifying a fixed position)
-  can be directly added to :doc:`clip-channel` elements,
-  a separate :doc:`transform` element has been used here.
-  The target of the |transform| is the |clip|
-  (it could also be the |channel| or the |source|,
-  which in this simple example wouldn't make any difference).
-
 This still uses the shorthand of specifying the position directly in the
 |channel| element.
 As shown in :scene-link:`minimal-expanded-with-explicit-transform.asd`,
@@ -67,7 +60,7 @@ it can be expanded even further:
 
 * If the clip has only one channel, it doesn't matter whether the |transform|
   is applied to the |clip| or to the |channel|.
-  In this case it could be even directly applied to the |source|.
+  In this simple case it could be even directly applied to the |source|.
 
 * The :doc:`transform` element could be even further expanded
   to contain the ``pos`` information in a single |o| sub-element.

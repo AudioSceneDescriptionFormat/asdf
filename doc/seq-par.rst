@@ -1,8 +1,7 @@
 |seq| and |par|
 ===============
 
-Both audio clips (see :doc:`clip-channel`)
-and :doc:`transform` elements
+Both audio clips and |transform| elements
 are objects that have a certain duration.
 They can be placed in the timeline
 one after another by putting them into a |seq|

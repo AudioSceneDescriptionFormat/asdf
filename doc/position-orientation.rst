@@ -5,11 +5,12 @@ The ASDF uses a right-handed cartesian coordinate system
 to specify positions in 3D space.
 The x-, y- and z-axis can be thought of  as pointing towards
 *east*, *north* and *up*, respectively,
-which is sometimes called an *ENU* system
-(see https://en.wikipedia.org/wiki/Axes_conventions).
+which is sometimes called an `ENU system`__.
 However, contrary to typical ENU systems,
 the default orientation in the ASDF is towards *north*,
 i.e. along the positive y-axis!
+
+__ https://en.wikipedia.org/wiki/Axes_conventions
 
 Imagine a treasure map lying on a table in front of you.
 The north direction typically points towards the top of the map
@@ -40,7 +41,7 @@ is along the positive y-axis.
 To fully specify all three degrees of freedom,
 the default *up* direction is set to the positive z-axis
 (which should be an unsurprising choice).
-For specifying arbitrary rotations relative to the default orientation,
+For specifying arbitrary rotations relative to this default orientation,
 up to three `Tait--Bryan angles`__ can be specified.
 The first angle (*azimuth*) rotates around the z-axis,
 the second angle (*elevation*) around the (previously rotated) x-axis
