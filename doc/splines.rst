@@ -15,13 +15,13 @@ and it provides language bindings for C_ and Python_.
 .. _C: https://www.open-std.org/jtc1/sc22/wg14/
 .. _Python: https://www.python.org/
 
-For a
+We refer to a
 :doc:`general definition of splines and their properties <splines:euclidean/splines>`
-and for detailed background information about all the different types of
+and to detailed background information about all the different types of
 :doc:`Euclidean splines <splines:euclidean/index>` and
 :doc:`rotation splines <splines:rotation/index>`
-mentioned here, their mathematical derivation and their individual properties,
-visit https://splines.readthedocs.io/.
+mentioned here,
+including their mathematical derivation and their individual properties.
 
 
 Position Splines
@@ -44,7 +44,7 @@ The possible values range from -1 to 1, with 0 being the default.
 Kochanek--Bartels splines are
 a superset of the probably more familiar
 :doc:`splines:euclidean/catmull-rom`.
-If all TCB values are zero, the two splines are idential.
+If all TCB values are zero, the two splines are identical.
 
 To be guaranteed to avoid cusps and self-intersections
 (assuming default TCB values),
@@ -68,7 +68,14 @@ This means that for each position in the spline, we can specify
 the time when this position should be reached.
 We can even specify the speed at these positions
 (as long as the monotonicity of the re-parameterization spline can be upheld).
-See the section about the :doc:`transform` element for details.
+See the section about :doc:`transform` for details.
+
+It might have been tempting to use :doc:`splines:euclidean/bezier`
+due to their widespread use in 2D drawing software.
+However, finding appropriate *drag points* in three-dimensional space
+is very hard compared to simply defining a sequence of 3D positions.
+Similarly, it would be quite cumbersome to explicitly define
+three-dimensional tangent vectors for use with :doc:`splines:euclidean/hermite`.
 
 
 Rotation Splines
