@@ -7,8 +7,8 @@ like the ``pos`` attribute in :scene-link:`minimal.asd`:
 .. literalinclude:: scenes/minimal.asd
 
 Such attributes (``pos``, ``rot`` etc.) can be added to
-:doc:`clip-channel` elements,
-as well as :doc:`source` and :doc:`reference` elements.
+:doc:`clip-channel`,
+as well as :doc:`source` and :doc:`reference`.
 
 These attributes can be seen as shorthand notation to avoid using
 |transform| elements for such simple cases.
@@ -58,7 +58,7 @@ applied to the default *orientation* ``(0, 0, 0)``.
 
 The ``rot`` attribute contains a space-separated list of up to three angles
 (in degrees) called *azimuth*, *elevation* and *roll*.
-Only *azimuth* is required, the others default to zero degree if not specified.
+Only *azimuth* is required, the others default to zero if not specified.
 For angle conventions, see :doc:`position-orientation`.
 
 The range of angle values is not limited,
@@ -87,18 +87,15 @@ A (linear) volume change can be specified as a non-negative decimal value.
 Using ``vol="0"`` results in silence,
 ``vol="0.5"`` corresponds to an attenuation of about 6 decibels,
 ``vol="1"`` doesn't change the volume and
-``vol="2"`` corresponds to boost of about 6 decibels.
+``vol="2"`` corresponds to a boost of about 6 decibels.
 
 
 |o|
 ---
 
-Typically, |transform| elements contain one or more |o| elements.
+A |transform| element can contain zero, one or more |o| elements.
 Let's call them *transform nodes*.
-
-As we have seen above,
-a single |o| element is able to describe a constant transform.
-
+A |transform| with a single |o| element is able to describe a constant transform.
 If we specify two transform nodes,
 we can define a *linear movement* between two points.
 This is shown in :scene-link:`two-pos.asd`:
@@ -130,7 +127,7 @@ see :scene-link:`transform-vol.asd`:
     This should only be used for relatively slow volume changes,
     because the renderer might only apply them on a block-by-block basis.
     If you need fast envelopes, those should be applied by modifying
-    the source file in a waveform editor.
+    the audio file in a waveform editor.
 
 
 .. _transform-time:
@@ -161,7 +158,7 @@ See :scene-link:`spline-time-percent.asd`:
 
 .. literalinclude:: scenes/spline-time-percent.asd
 
-If the |transform| doesn't have a ``dur`` (see below),
+If the |transform| doesn't have a ``dur`` attribute (see below),
 the last node can have an explicit ``time`` value,
 but a percentage is not allowed.
 If unspecified, ``time="100%"`` is implied, i.e.
@@ -189,13 +186,19 @@ For an example, see :scene-link:`spline-speed.asd`:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ASDF uses :doc:`splines:euclidean/kochanek-bartels`, which means that
-``tension``, ``continuity`` and ``bias`` attributes
-(each value ranging from ``-1.0`` to ``1.0`` with a default of ``0.0``)
-can be used, see e.g. :scene-link:`spline-tcb.asd`:
+the so-called TCB attributes ``tension``, ``continuity`` and ``bias``
+(each ranging from ``-1.0`` to ``1.0`` with a default of ``0.0``)
+can be used.
+These attributes can be applied to individual *transform nodes*
+or to the whole |transform|, as shown in :scene-link:`spline-tcb.asd`:
 
 .. literalinclude:: scenes/spline-tcb.asd
 
-Those attributes can also be used for ``rot`` trajectories,
+In most cases, specifying TCB values will not be necessary,
+but they can be useful for creating straight lines, sharp edges,
+circles and other :doc:`special-shapes`.
+
+TCB attributes can also be used for ``rot`` trajectories,
 leading to :doc:`splines:rotation/kochanek-bartels`.
 
 
@@ -228,7 +231,6 @@ illustrates this in an example trajectory:
 
 If the last transform node has its ``time`` attribute set,
 this will determine the duration of the |transform|.
-
 Alternatively, the duration of a |transform|
 can be specified with the ``dur`` attribute,
 which allows the same syntax as the ``time`` attribute of transform nodes.
@@ -241,6 +243,8 @@ the duration is taken from the |par| container
 (whose duration might be provided by its first sub-element).
 See :doc:`seq-par`.
 
+
+.. _nested-transform:
 
 Nested |transform|
 ------------------

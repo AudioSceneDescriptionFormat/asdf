@@ -56,7 +56,7 @@ Transform Attributes
 
 Any |source| element with an ``id`` attribute can be the target of a
 :doc:`transform` (using the ``apply-to`` attribute).
-Like :doc:`clip-channel` elements,
+Like :doc:`clip-channel`,
 |source| can also use transform attributes
 like ``pos``, ``rot`` etc. as a shortcut,
 see :scene-link:`source-transform.asd`:

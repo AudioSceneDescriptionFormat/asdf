@@ -22,7 +22,7 @@ Volume control is part of the :doc:`transform` mechanism.
 A constant volume can be specified with the ``vol`` attribute
 of |clip| and/or |channel|, a dynamic volume envelope can be applied
 with a |transform| element that's running in parallel to the |clip|
-(see :doc:`seq-par`).
+-- see :doc:`seq-par`.
 
 As :scene-link:`selecting-channels.asd` shows,
 not all channels of a |clip| have to be used:

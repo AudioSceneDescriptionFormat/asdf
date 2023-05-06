@@ -2,12 +2,11 @@
 =================
 
 Both |head| and |body| are optional.
-
 If there is a |head| element,
 it must be the first sub-element of :doc:`asdf`.
 
 The |head| element can contain :doc:`source` sub-elements
-and an optional :doc:`reference` element.
+and an optional :doc:`reference`.
 All elements within |head| exist for the whole duration of the scene.
 If they contain transform attributes like ``pos`` or ``rot``,
 those values are static.

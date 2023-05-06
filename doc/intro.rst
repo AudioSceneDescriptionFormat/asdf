@@ -31,7 +31,7 @@ the more complicated ASDF syntax shown in :scene-link:`minimal-expanded.asd`:
 Please note a few changes to the "minimal" version above:
 
 * An `XML declaration <https://www.w3.org/TR/xml/#sec-prolog-dtd>`__
-  has been added, which is optional in XML 1.0 (but not in XML 1.1)
+  has been added, which is optional in XML 1.0 (but not in XML 1.1).
 
 * The :doc:`head-body` elements are optional.
   The :doc:`asdf` element (including version number) is always required.
@@ -44,6 +44,8 @@ Please note a few changes to the "minimal" version above:
 * Even though this is not necessary for a mono |clip|,
   a |channel| element has been provided explicitly.
   It has been associated with the :doc:`source` that was defined in |head|.
+
+* The z-component in ``pos`` is optional, see :doc:`transform`.
 
 This still uses the shorthand of specifying the position directly in the
 |channel| element.

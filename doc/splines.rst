@@ -3,7 +3,7 @@ ASDF Splines
 
 Knowing the details about the splines used in the ASDF
 is not necessary to create scenes.
-However, it might be interesting to know
+However, it might still be interesting to know
 why the shape and behavior of trajectories is the way it is.
 
 A reference implementation of ASDF splines is available at
@@ -28,7 +28,8 @@ Position Splines
 ----------------
 
 The most obvious type of splines in the ASDF are *position splines*.
-The idea is that a scene author provides a sequence of positions in 3D space
+The idea is that a scene author provides a sequence of positions
+in three-dimensional space
 and an ASDF library creates a smooth curve that goes through all of them.
 The scene author can also provide the times at which the positions
 should be reached, as well as -- with certain limitations --
@@ -50,19 +51,18 @@ To be guaranteed to avoid cusps and self-intersections
 (assuming default TCB values),
 :ref:`splines:/euclidean/catmull-rom-properties.ipynb#Centripetal-Parameterization`
 is used.
-
 This, however, means that the parameter values cannot be chosen freely anymore.
 Since we want to be able to specify the times
 when certain control points are reached
 (and to some degree the speed along the trajectory),
 we cannot directly interpret the parameter value as elapsed time.
-Instead, we re-parameterize the spline to have constant speed,
+As a first step, we re-parameterize the spline to have constant speed,
 which is also known as
 :ref:`splines:/euclidean/re-parameterization.ipynb#Arc-Length-Parameterization`.
 
-Having constant speed trajectories is a useful default,
+Having constant speed trajectories is a useful,
 but only being able to use constant speed is also quite limiting.
-Therefore, ASDF splines can be
+Therefore, on top of arc-length parameterization, ASDF splines are also
 :ref:`re-parameterized with a monotone spline <splines:/euclidean/re-parameterization.ipynb#Spline-Based-Re-Parameterization>`.
 This means that for each position in the spline, we can specify
 the time when this position should be reached.
@@ -83,17 +83,16 @@ Rotation Splines
 
 When a scene author provides a sequence of orientations
 for sound sources or groups of sound sources,
-the values between the given orientations will also be smoothly interpolated.
+the values between the given orientations will be smoothly interpolated.
 
 The same kind of splines are used as for positions,
 just modified to work with rotations.
-
 Centripetal :doc:`splines:rotation/kochanek-bartels` are used,
 which are a superset of :doc:`Catmull--Rom-Like Rotation Splines <splines:rotation/catmull-rom-non-uniform>`.
 If specified, the same TCB values apply to both position and rotation splines.
 The rotation splines are arc-length parameterized by default,
 which means that they have a constant angular speed.
-Time instances can be specified together with rotations,
+Time instances can be specified for any of the given rotations,
 which in turn control the changing angular speeds along the spline.
 The angular speed cannot be specified explicitly, though.
 This would be technically possible,
