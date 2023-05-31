@@ -60,14 +60,14 @@ As a first step, we re-parameterize the spline to have constant speed,
 which is also known as
 :ref:`splines:/euclidean/re-parameterization.ipynb#Arc-Length-Parameterization`.
 
-Having constant speed trajectories is a useful,
+Having constant speed trajectories is useful,
 but only being able to use constant speed is also quite limiting.
 Therefore, on top of arc-length parameterization, ASDF splines are also
 :ref:`re-parameterized with a monotone spline <splines:/euclidean/re-parameterization.ipynb#Spline-Based-Re-Parameterization>`.
 This means that for each position in the spline, we can specify
 the time when this position should be reached.
 We can even specify the speed at these positions
-(as long as the monotonicity of the re-parameterization spline can be upheld).
+(as long as the monotonicity of the re-parameterization spline can be maintained).
 See the section about :doc:`transform` for details.
 
 It might have been tempting to use :doc:`splines:euclidean/bezier`

@@ -2,7 +2,7 @@ Special Shapes
 ==============
 
 There are no pre-defined special shapes in the ASDF.
-All trajectories are using the same underlying type of spline
+All trajectories use the same underlying type of spline
 -- see :doc:`splines`.
 
 

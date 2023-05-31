@@ -29,8 +29,8 @@ not all channels of a |clip| have to be used:
 
 .. literalinclude:: scenes/selecting-channels.asd
 
-Audio clips are always played to their full length.
-Audio files should be trimmed beforehand to the desired length.
+Audio clips are always played in full length.
+Audio files should be trimmed to the desired length during scene authoring.
 
 
 ``repeat``
