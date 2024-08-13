@@ -38,7 +38,7 @@ rst_prolog = """
 """
 
 nbsphinx_prolog = r"""
-{% set docname = 'doc/' + env.doc2path(env.docname, base=None) %}
+{% set docname = 'doc/' + env.doc2path(env.docname, base=None)|string %}
 
 .. raw:: html
 
@@ -57,7 +57,7 @@ nbsphinx_prolog = r"""
 """
 
 nbsphinx_epilog = r"""
-{% set docname = 'doc/' + env.doc2path(env.docname, base=None) %}
+{% set docname = 'doc/' + env.doc2path(env.docname, base=None)|string %}
 
 .. raw:: latex
 
