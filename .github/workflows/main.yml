@@ -15,11 +15,7 @@ jobs:
             pandoc
           )
           sudo apt-get install --no-install-recommends ${PACKAGES[@]}
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.9
-      - name: Double-check Python version
+      - name: Check Python version
         run: |
           python --version
       - name: Install docs dependencies
