@@ -47,7 +47,7 @@ The first angle (*azimuth*) rotates around the z-axis,
 the second angle (*elevation*) around the (previously rotated) x-axis
 and the third angle (*roll*) around the (previously rotated) y-axis.
 
-__ https://en.wikipedia.org/wiki/Euler_angles#Tait–Bryan_angles
+__ https://en.wikipedia.org/wiki/Euler_angles#Tait-Bryan_angles
 
 All angles are given in degrees.
 The *elevation* and *roll* angles are optional, with a default of zero.
