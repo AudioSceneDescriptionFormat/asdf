@@ -66,6 +66,11 @@ nbsphinx_epilog = r"""
     {{ docname | escape_latex }}}} ends here.}}
 """
 
+linkcheck_ignore = [
+    # Zstandard data is incomplete
+    'https://en.cppreference.com/',
+]
+
 # -- Get version information and date from Git ----------------------------
 
 try:
